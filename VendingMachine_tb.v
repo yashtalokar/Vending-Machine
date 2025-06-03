@@ -1,4 +1,4 @@
-
+`timescale 1ns/1ps
 `define clock_period 10
 
 // Module for the testbench
