@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 module Item_One(
   input five_rup,ten_rup,clk,rst,
   output reg product, change
