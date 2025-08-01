@@ -16,7 +16,7 @@ This project required knowledge of Verilog, FSMs, and digital design principles 
  |**Candy**|₹15|
  |**Snacks**|₹20|
  |**Popcorn**|₹25|
- |**Can**|₹30|
+ |**Coke**|₹30|
  
 - The machine only accepts ₹5 and ₹10 coin, with a maximum of one coin entered at each cycle.
 - The machine returns the change if there is any.
