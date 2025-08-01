@@ -10,11 +10,10 @@ module Item_One(
             S5  = 3'b010,
             S10 = 3'b100;
   
-  always @(posedge clk or posedge rst or posedge five_rup or posedge ten_rup)
+  always @(posedge clk or posedge rst )
     begin
       if(rst) begin curr_state <= S0;{product, change} = 2'b00; end 
-      else begin //curr_state <= next_state;
-
+      else begin 
       case(curr_state)
         S0:
           if(five_rup)     begin next_state = S5; {product, change} = 2'b00; end
@@ -51,11 +50,11 @@ module Item_Two(
             S10 = 4'b0100,
             S15 = 4'b1000;
   
-  always @(posedge clk or posedge rst or posedge five_rup or posedge ten_rup)
+  always @(posedge clk or posedge rst)
     begin
       if(rst) begin curr_state <= S0; {product, change} = 2'b00; end
-      else  begin //curr_state <= next_state;
-  
+      else  begin 
+        
       case(curr_state)
         S0:
           if(five_rup)     begin next_state = S5; {product, change} = 2'b00; end
@@ -78,8 +77,7 @@ module Item_Two(
           else             begin next_state = S15; {product, change} = 2'b00; end
         
         default:  
-          begin next_state = S0; {product, change} = 2'b00; end
-        
+          begin next_state = S0; {product, change} = 2'b00; end        
        
       endcase
       curr_state <= next_state;
@@ -100,10 +98,10 @@ module Item_Three(
             S15 = 5'b01000,
             S20 = 5'b10000;
   
-  always @(posedge clk or posedge rst or posedge five_rup or posedge ten_rup)
+  always @(posedge clk or posedge rst)
     begin
       if(rst) begin curr_state <= S0; {product, change} = 2'b00; end
-      else begin //curr_state <= next_state;
+      else begin 
    
       case(curr_state)
         S0:
@@ -155,10 +153,10 @@ module Item_Four(
             S25 = 6'b100000;
   
 
-  always @(posedge clk or posedge five_rup or posedge ten_rup or posedge rst )
+  always @(posedge clk or posedge rst )
     begin
       if(rst) begin curr_state <= S0; next_state <= S0; {product, change} = 2'b00; end
-        else begin //curr_state <= next_state;
+        else begin 
           
           case(curr_state)
             S0:
