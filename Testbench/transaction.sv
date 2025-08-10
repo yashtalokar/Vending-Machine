@@ -1,0 +1,31 @@
+class vending_txn;
+  rand bit five_rup;
+  rand bit ten_rup;
+  bit [3:0] item_no;
+	bit reset;
+
+  bit exp_product;
+  bit exp_change;
+
+  
+  constraint rupee {!(five_rup && ten_rup);}
+  
+  covergroup cg;
+    c1: coverpoint five_rup;
+    c2: coverpoint ten_rup;
+    c3: coverpoint item_no {bins b1[] = {1,2,4,8};}
+    c4: cross five_rup, ten_rup,c3;
+  endgroup
+  
+  function new();
+    cg = new();
+  endfunction
+  
+   
+  function void display(string name);
+    $display("-----------------------------");
+    $display("%s", name);
+    $display("TXN => five=%0b ten=%0b item=%0d", five_rup, ten_rup, item_no);
+    $display("-----------------------------");
+  endfunction
+endclass
