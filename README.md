@@ -29,7 +29,7 @@ The chip must have the following specs:
 - Works at 100 MHz.
 
 ### 1.3 Schematic
-![image](https://github.com/user-attachments/assets/0e4254c4-3136-4952-832a-5fdb7074fcb4)
+![image](design.png)
 
 ### 1.4 Simulation Result
 ![image](https://github.com/user-attachments/assets/7b92e5f2-4d1a-499e-bc0b-ccf8b59638ff)
