@@ -32,7 +32,7 @@ The chip must have the following specs:
 ![image](design.png)
 
 ### 1.4 Simulation Result
-![image](https://github.com/user-attachments/assets/7b92e5f2-4d1a-499e-bc0b-ccf8b59638ff)
+![image](waveform.png)
 
 ### 1.5 Future Scope
 We can further add a termination button to the machine. This button would allow the user to terminate the purchase process and receive all the money back sequentially.
