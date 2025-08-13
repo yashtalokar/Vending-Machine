@@ -37,3 +37,5 @@ The chip must have the following specs:
 ### 1.5 Future Scope
 We can further add a termination button to the machine. This button would allow the user to terminate the purchase process and receive all the money back sequentially.
 
+### 1.6 EDA Playground Link: [https://edaplayground.com/x/HfCf]
+
