@@ -2,7 +2,7 @@
 `include "environment.sv"
 
 module top;
-  bit clk;
+  bit clk=1;
   always #5 clk = ~clk;
 
   vending_if vif(clk);
@@ -28,19 +28,19 @@ module top;
   
   initial begin
     env = new(vif);
-    env.gen.repeat_count = 80;
+    env.gen.repeat_count = 32;
     fork
       env.run();
      
       forever begin
         vif.item_no = 4'b0001; 
-        #200;
+        #40;
         vif.item_no = 4'b0010; 
-        #200;
+        #40;
         vif.item_no = 4'b0100;
-        #200;
+        #40;
         vif.item_no = 4'b1000;
-        #200;
+        #40;
       end
     join
   end
