@@ -1,11 +1,10 @@
 class vending_txn;
   rand bit five_rup;
   rand bit ten_rup;
-  bit [3:0] item_no;
-	bit reset;
+       bit [3:0] item_no;
 
-  bit exp_product;
-  bit exp_change;
+  bit product;
+  bit change;
 
   
   constraint rupee {!(five_rup && ten_rup);}
@@ -14,7 +13,9 @@ class vending_txn;
     c1: coverpoint five_rup;
     c2: coverpoint ten_rup;
     c3: coverpoint item_no {bins b1[] = {1,2,4,8};}
-    c4: cross five_rup, ten_rup,c3;
+    c4: cross five_rup, ten_rup { illegal_bins both = binsof(five_rup) intersect {1} &&
+      binsof(ten_rup) intersect {1}; }
+    c5: cross c4,c3;
   endgroup
   
   function new();
